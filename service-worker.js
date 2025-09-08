@@ -17,14 +17,18 @@ self.addEventListener('install', event => {
   );
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
+self.addEventListener("install", installEvent => {
+  installEvent.waitUntil(
+    caches.open(staticDevCoffee).then(cache => {
+      cache.addAll(assets);
+    })
+  );
+});
+
+self.addEventListener("fetch", fetchEvent => {
+  fetchEvent.respondWith(
+    caches.match(fetchEvent.request).then(res => {
+      return res || fetch(fetchEvent.request);
+    })
   );
 });
