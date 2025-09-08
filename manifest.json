@@ -1,6 +1,6 @@
 {
-  "name": "DWebI",
-  "short_name": "AtividadesWebI",
+  "name": "Atividades Web I",
+  "short_name": "Atividades Web I",
   "description": "Página Web com atividades da aula de Desenvolvimento Web I do curso de Análise e Desenvolvimento de Sistemas do IFSP - Instituto Federal de São Paulo",
   "start_url": "index.html",
   "display": "standalone",
