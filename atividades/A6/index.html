@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6 - Aplicação modo noturno</title>
+    <link rel="shortcut icon" type="imagex/png" href="../../src/img/icon.ico">
+    <link href="./src/style/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mode = document.getElementById('mode');
+
+        const header = document.querySelector('header');
+        const body = document.body;
+
+
+        mode.addEventListener("change", function () {
+            if (this.checked) {
+                header.classList.toggle('header_light');
+                header.classList.toggle('header_dark');
+                body.classList.toggle('body_dark');
+                body.classList.toggle('body_light');
+            } else {
+                header.classList.toggle('header_dark');
+                header.classList.toggle('header_light');
+                body.classList.toggle('body_light');
+                body.classList.toggle('body_dark');
+            }
+        });
+    });
+</script>
+
+<body class="body_light">
+
+    </button>
+    <header class="header_light">
+        <h1 class="container">Aplicação de modo noturno em uma página HTML</h1>
+        <div class="input_mode">
+            <input id="mode" type="checkbox" name="">
+        </div>
+
+    </header>
+
+    <section class="box__atividades container">
+        <a href="../../index.html">Voltar para página inicial</a>
+        <span>Desenvolvimento de uma página HTML para desenvolver a aplicação de modo noturno </span>
+
+
+
+        <div class="box__atividades-conteudo">
+            <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo
+                utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os
+                embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como
+                também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na
+                década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente
+                quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="shortcut icon" type="imagex/png" href="../../src/img/icon.ico">
+    <title>Atividade 11 - Construção de um formulário</title>
+</head>
+
+<body>
+    <header>
+        <legend>Formulário de Contato</legend>
+    </header>
+    <main>
+        <form class="container">
+            <div class="div_inputs">
+                <label for="nome">Nome e sobrenome</label>
+                <input id="nome" class="input_text">
+            </div>
+
+            <div class="div_inputs">
+                <label for="email">Email</label>
+                <input id="email" class="input_text">
+
+            </div>
+
+            <div class="div_inputs">
+                <label for="telefone">Telefone</label>
+                <input id="telefone" class="input_text">
+            </div>
+
+            <div class="div_inputs">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" class="input_text"></textarea>
+            </div>
+
+            <div class="form_radiobox">
+                <span>Como prefere o nosso contato?</span>
+                <label for="emailContato">
+                    <input type="radio" name="Contato" id="emailContato" value="emailContato" checked> Email
+                </label>
+                <label for="telefoneContato">
+                    <input type="radio" name="Contato" id="telefoneContato" value="telefoneContato"> Telefone
+                </label>
+                <label for="whatsappContato"> 
+                    <input type="radio" name="Contato" id="whatsappContato" value="whatsappContato"> Whatsapp
+                </label>
+            </div>
+
+
+            <div class="form_div">
+                <label for="nome">Qual horário prefere ser atendido?</label>
+                <select name="select">
+                    <option value="valor1" selected>Manhã </option>
+                    <option value="valor2">Tarde</option>
+                    <option value="valor3">Noite</option>
+                </select>
+            </div>
+
+
+            <div class="form_check">
+                <input id="nome" type="checkbox"><label for="nome">Gostaria de receber nossas novidades por
+                    email?</label>
+
+            </div>
+
+            <button class="form_btn">Enviar formulário</button>
+
+            <table>
+                <tr>
+                    <th>Dia</th>
+                    <th>Horários</th>
+                </tr>
+                <tr>
+                    <td>Segunda</td>
+                    <td>8 - 20h</td>
+                </tr>
+                <tr>
+                    <td>Terça</td>
+                    <td>8 - 20h</td>
+                </tr>
+                <tr>
+                    <td>Quarta</td>
+                    <td>8 - 20h</td>
+                </tr>
+                <tr>
+                    <td>Quinta</td>
+                    <td>8 - 20h</td>
+                </tr>
+                <tr>
+                    <td>Sexta</td>
+                    <td>8 - 20h</td>
+                </tr>
+            </table>
+        </form>
+    </main>
+
+    <footer><span>Desenvolvido por Gustavo Lima</span></footer>
+</body>
+
+</html>

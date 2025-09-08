@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway';
+}
+
+.container {
+    max-width: 90%; 
+    width: 100%; 
+    margin: 0 auto;
+    padding: 20px;
+}  
+
+header {
+    background: #1D1D1D;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: #F9F9F9;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    border: solid 1px;
+    margin: 1rem auto !important;
+}
+
+legend {
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+}
+
+label {
+    
+    align-self: baseline;
+}
+
+.div_inputs {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+.div_inputs label{
+    margin: 1em 0 0.5em 0;
+}
+
+.form_radiobox {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    gap: 10px;
+}
+
+.form_radiobox span {
+    margin-top: 2rem;
+}
+
+.form_radiobox label {
+    width: auto;
+    display: inline-block;
+}
+
+.form_div {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+.form_div label {
+    margin: 2rem 0 1rem 0;
+}
+
+.form_check {
+    display: flex;
+    margin-top: 1rem;
+    gap: 5px;
+}
+
+.form_check label {
+    margin: 0;
+}
+
+.form_btn {
+    /*padding: 1em 5em; */
+    background-color: #000340;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 10rem;
+    height: 2rem;
+    margin: 2rem auto;
+    border: none;
+}
+
+.form_btn:hover {
+    background-color: #050c86;
+    cursor: pointer;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: solid 1px;
+  }
+
+footer  {
+    background-color: #0F0F0F;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+}

@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway';
+}
+
+.container {
+    max-width: 90%; 
+    width: 100%; 
+    margin: 0 auto;
+    padding: 20px;
+}  
+
+:root {
+    --background-light: #ebeae6;
+    --background-dark: #0F0F0F;
+    --header-light: #1D1D1D;
+    --header-dark: #000340;
+    --font-light: #000;
+    --font-dark: #fff;
+}
+
+.body_light {
+    background-color: var(--background-light);
+    color: var(--font-light);
+}
+
+.header_light {
+    background-color: var(--header-light);
+}
+
+.body_dark {
+    background-color: var(--background-dark);
+    color: var(--font-dark);
+}
+
+.header_dark {
+    background-color: var(--header-dark);
+}
+
+h1 {
+    color: #E2E2E2;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.input_mode {
+    position: fixed;
+    z-index: 1;
+    top: 23px;
+    right: 100px;
+    cursor: pointer;
+}
+
+#mode{
+    -webkit-appearance: none;
+    -moz-appearance: none;    /* For Firefox */
+    appearance: none;         /* Standard */
+    background-color: #f1f1f1;
+    width: 50px;
+    height: 25px;
+    border-radius: 15px;
+}
+
+#mode::before {
+    left: 0;
+    content: "\f185";
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e7c70e;
+    font: normal 900 1em/1 "Font Awesome 6 Free";
+    font-size: 16px;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: var(--background-dark);
+    border-radius: 20px;
+    transform: scale(0.9);
+    transition: 0.7s ease all;
+}
+
+#mode:checked::before {
+    background-color: var(--background-light);
+    left: 22px;
+    font-weight: 900;
+    font-size: 20px;
+    content: "\f186"; 
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Font Awesome 6 Free";
+}
+
+#mode:checked {
+    background-color: #e7c70e;
+}
+
+.box__atividades {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    border-radius: 18px;
+}
+
+.box__atividades span:nth-child(2) {
+    margin: 1rem 0;
+    display: inline-block;
+}
+
+.box__atividades-conteudo p {
+    margin-top:1rem;
+    text-align: justify;
+}

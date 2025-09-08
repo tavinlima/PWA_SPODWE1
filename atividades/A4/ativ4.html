@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="../../src/img/icon.ico">
+    <link href="./src/style/style.css" rel="stylesheet">
+    <link href="./src/style/fonts.css" rel="stylesheet">
+    <link href="./src/style/media.css" rel="stylesheet">
+    <title>Atividade 4 - Landing Page</title>
+    <script>
+        // Função para aplicar a máscara de CPF
+        function aplicarMascaraTel(input) {
+            let valor = input.value;
+            valor = valor.replace(/\D/g, ''); // Remove tudo que não for número
+            valor = valor.replace(/^(\d{2})(\d)/, '($1) $2'); // Adiciona parênteses e espaço
+            valor = valor.replace(/(\d{4})(\d)/, '$1-$2'); // Adiciona o traço
+            input.value = valor;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="title">
+            <h1>Conexão</h1>
+            <h1>Digital</h1>
+        </div>
+
+        <ul>
+            <a href="#">
+                <li>Início</li>
+            </a>
+            <a href="#">
+                <li>Serviços</li>
+            </a>
+            <a href="#">
+                <li>Sobre</li>
+            </a>
+            <a href="#">
+                <li>Contato</li>
+            </a>
+            <a href="#" id="inscreva-se-btn">
+                <li>Já tem uma conta?</li>
+            </a>
+        </ul>
+    </header>
+
+    <main>
+        <aside>
+            <div class="section__titles">
+                <h2 class="section__titles-title">Inscreva-se agora</h2>
+                <h2 class="section__titles-subtitle">em nossa newsletter</h2>
+            </div>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s.
+            </p>
+            <form>
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="E-mail">
+                <input type="tel" oninput="aplicarMascaraTel(this)" minlength="9" maxlength="15" placeholder="Telefone">
+                <input type="submit" value="Enviar">
+            </form>
+        </aside>
+
+        <article>
+            <img class="img__banner" src="./src/img/undraw_video-tutorial_lgts.svg"
+                alt="homem dentro de celular enviando email para outro homem fora">
+        </article>
+    </main>
+
+</body>
+
+</html>

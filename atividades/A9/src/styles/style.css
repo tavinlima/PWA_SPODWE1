@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway';
+}
+
+.container {
+    max-width: 90%; 
+    width: 100%; 
+    margin: 0 auto;
+    padding: 20px;
+}  
+
+body {
+    background-color: #ebeae6;
+}
+
+header {
+    background-color: #1D1D1D;
+}
+
+h1 {
+    color: #E2E2E2;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.box__atividades {
+    padding: 1rem;
+    height: 90vh;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box__atividades a {
+    margin-bottom: 1rem;
+}
+
+.box__atividades-conteudo {
+    margin-top: 2rem;
+    width: 400px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: #1D1D1D solid 1px;
+    border-radius: 52% 48% 49% 51% / 48% 0% 100% 52% 
+}

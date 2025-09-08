@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPODWE1</title>
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="shortcut icon" type="imagex/png" href="./src/img/icon.ico">
+    <meta property="og:title" content="Atividades da aula de Desenvolvimento Web 1" />
+    <meta property="og:description" content="Repositório com as atividades da matéria" />
+    <meta property="og:image" content="https://tavinlima.github.io/SPODWE1/src/img/meta_img.png" />
+    <meta property="og:url" content="https://tavinlima.github.io/SPODWE1/index.html" />
+    <meta property="og:type" content="website" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+                    console.log('Service Worker registrado com sucesso:', registration.scope);
+                }, function (err) {
+                    console.log('Falha no registro do Service Worker:', err);
+                });
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1 class="container">IFSP - Desenvolvimento Web I/SPODWE1</h1>
+    </header>
+
+    <main class="box__atividades container">
+        <h2>Atividades para aula de Desenvolvimento Web I</h2>
+        <span>Página com todas as atividades desenvolvidas para a aula de Desenvolvimento Web I do terceiro semestre do
+            curso de Análise e Desenvolvimento de Sistemas do Instituto Federal de São Paulo - IFSP</span>
+        <div class="box__atividades-conteudo">
+            <div>
+                <a href="">Atividade 1</a> <span> - Desenvolvimento da própria Home com os links para o restante das
+                    atividades abaixo: </span>
+            </div>
+            <div>
+                <a href="./atividades/A2/ativ2.html">Atividade 2</a>
+                <span> - Prototipação em alta fidelidade das páginas do meu portfólio pessoal. </span>
+            </div>
+
+            <div>
+                <a href="./atividades/A3/home.html">Atividade 3</a>
+                <span> - Desenvolvimento do HTML do meu protótipo pessoal.</span>
+            </div>
+
+            <div>
+                <a href="./atividades/A4/ativ4.html">Atividade 4</a>
+                <span> - Desenvolvimento de uma Landing Page simples para uma newsletter.</span>
+            </div>
+
+            <div>
+                <a href="./atividades/A5/ativ5.html">Atividade 5</a>
+                <span> - Resolução de exercícios sobre seletores CSS</span>
+            </div>
+
+            <div>
+                <a href="./atividades/A6/index.html">Atividade 6</a>
+                <span> - Aplicação de modo noturno em uma página HTML</span>
+            </div>
+
+            <div>
+                <a href="./atividades/A7/index.html">Atividade 7</a>
+                <span> - Ferramentas de SEO</span>
+            </div>
+
+            <div>
+                <a href="./atividades/A8/index.html">Atividade 8 </a>
+                <span> - Resolução de exercícios sobre seletores Flexbox e Grid</span>
+            </div>
+
+            <div>
+                <a href="./atividades/A9/index.html">Atividade 9 </a>
+                <span> - Aplicação de border-radius em uma div</span>
+            </div>
+
+            <div>
+                <a href="./atividades/A10/index.html">Atividade 10 </a>
+                <span> - Aplicação de máscara em inputs</span>
+            </div>
+
+            <div>
+
+                <a href="./atividades/A11/index.html">Atividade 11</a>
+                <span> - Consumo de uma API</span>
+            </div>
+
+            <div>
+                <a href="./atividades/AEXTRA/index.html">Atividade extra de css</a>
+
+                <span> - Construção de um formulário</span>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

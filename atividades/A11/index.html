@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="shortcut icon" type="imagex/png" href="../../src/img/icon.ico">
+    <title>Atividade 11 - Consumo de API</title>
+</head>
+<script>
+
+    // URL da API do GitHub para obter dados do usuário autenticado
+    const url = 'https://api.github.com/users/tavinlima';
+
+    // Configurações da requisição
+    const options = {
+        method: 'GET'
+    };
+
+    // Fazendo a requisição para a API do GitHub
+    fetch(url, options)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            // Exibindo os dados do usuário no HTML
+            const userDataDiv = document.getElementById('user-data');
+            userDataDiv.innerHTML = `
+                    <p><strong>Nome:</strong> ${data.name}</p>
+                    <p><strong>Username:</strong> ${data.login}</p>
+                    <p><strong>Bio:</strong> ${data.bio}</p>
+                    <p><strong>Quantidade de repositórios Públicos:</strong> ${data.public_repos}</p>
+                    <div class='box__github_follow'> <p><strong>Seguidores:</strong> ${data.followers}</p>
+                    <p><strong>Seguindo:</strong> ${data.following}</p> </div>
+                `;
+        })
+        .catch(error => console.error('Erro:', error));
+
+    function carregarRepositorios() {
+
+        // URL da API do GitHub para obter os repositórios do usuário autenticado
+        const url = 'https://api.github.com/users/tavinlima/repos';
+
+        // Configurações da requisição
+        const options = {
+            method: 'GET'
+        };
+
+        // Fazendo a requisição para a API do GitHub
+        fetch(url, options)
+            .then(response => response.json())
+            .then(data => {
+                // Exibindo os repositórios no HTML
+                const reposDiv = document.getElementById('repos');
+                data.forEach(repo => {
+                    if (repo.description !== null) {
+                        const repoElement = document.createElement('div');
+                        repoElement.classList.add('card');
+                        repoElement.innerHTML = `
+                        <strong>Nome:</strong>
+                        <p> ${repo.name}</p>
+                        <strong>Descrição:</strong>
+                        <p class="box__repos_desc"> ${repo.description}</p>
+                        <p><strong>URL:</strong> <a href="${repo.html_url}" target="_blank">${repo.html_url}</a></p>
+                    `;
+                        reposDiv.appendChild(repoElement);
+                    }
+                });
+            })
+            .catch(error => console.error('Erro:', error));
+    }
+
+    carregarRepositorios()
+</script>
+
+
+<body>
+    <header>
+        <h1 class="container">Atividade 11 - Consumo de API</h1>
+    </header>
+
+    <main class="box__atividades container">
+        <h2>Consumindo uma API</h2>
+        <p>Consumindo a API do github para acesso aos dados do meu usuário</p>
+        <div class="box__atividades-conteudo">
+            <section class="box__atividades_section">
+                <img src="https://avatars.githubusercontent.com/u/82414372?v=4">
+                <div id="user-data"></div>
+            </section>
+
+            <section>
+                <h3>Meus repositórios: </h3>
+                <div id="repos"></div>
+            </section>
+
+        </div>
+    </main>
+</body>
+
+</html>
