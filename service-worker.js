@@ -1,50 +1,24 @@
-const cacheName = 'portfolio'
+const cacheName = "atividades-dev-web-1";
+const assets = [
+  '/',
+  'index.html',
+  'styles/styles.css',
+  'js/app.js',
+  'src/img/meta_img.png'
+];
 
-self.addEventListener('install', function (event) {
-  event.waitUntil(
-    caches.open(cacheName).then(function (cache) {
-      cache.addAll([
-        '/',
-        'index.html',
-        'styles/styles.css',
-        'js/app.js',
-        'img/meta_img.png'
-      ])
+self.addEventListener("install", installEvent => {
+  installEvent.waitUntil(
+    caches.open(cacheName).then(cache => {
+      cache.addAll(assets);
     })
-  )
-  return self.skipWaiting()
-})
+  );
+});
 
-self.addEventListener('activate', e => {
-  self.clients.claim()
-})
-
-self.addEventListener('fetch', async e => {
-  const req = e.request
-  const url = new URL(req.url)
-
-  if (url.origin === location.origin) {
-    e.respondWith(cacheFirst(req))
-  } else {
-    e.respondWith(networkAndCache(req))
-  }
-})
-
-async function cacheFirst(req) {
-  const cache = await caches.open(cacheName)
-  const cached = await cache.match(req)
-
-  return cached || fetch(req)
-}
-
-async function networkAndCache(req) {
-  const cache = await caches.open(cacheName);
-  try {
-    const refresh = await fetch(req)
-    await cache.put(req, fresh.clone())
-    return refresh
-  } catch (e) {
-    const cached = await cache.match(req);
-    return cached
-  }
-}
+self.addEventListener("fetch", fetchEvent => {
+  fetchEvent.respondWith(
+    caches.match(fetchEvent.request).then(res => {
+      return res || fetch(fetchEvent.request);
+    })
+  );
+});
