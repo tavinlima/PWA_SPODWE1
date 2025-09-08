@@ -1,34 +1,50 @@
-const CACHE_NAME = 'meu-pwa-cache-v1';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles/styles.css',
-  '/js/app.js',
-  '/img/meta_img.png'
-];
+const cacheName = 'portfolio'
 
-self.addEventListener('install', event => {
+self.addEventListener('install', function (event) {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Cache aberto');
-        return cache.addAll(urlsToCache);
-      })
-  );
-});
-
-self.addEventListener("install", installEvent => {
-  installEvent.waitUntil(
-    caches.open(staticDevCoffee).then(cache => {
-      cache.addAll(assets);
+    caches.open(cacheName).then(function (cache) {
+      cache.addAll([
+        '/',
+        '/index.html',
+        '/styles/styles.css',
+        '/js/app.js',
+        '/img/meta_img.png'
+      ])
     })
-  );
-});
+  )
+  return self.skipWaiting()
+})
 
-self.addEventListener("fetch", fetchEvent => {
-  fetchEvent.respondWith(
-    caches.match(fetchEvent.request).then(res => {
-      return res || fetch(fetchEvent.request);
-    })
-  );
-});
+self.addEventListener('activate', e => {
+  self.clients.claim()
+})
+
+self.addEventListener('fetch', async e => {
+  const req = e.request
+  const url = new URL(req.url)
+
+  if (url.origin === location.origin) {
+    e.respondWith(cacheFirst(req))
+  } else {
+    e.respondWith(networkAndCache(req))
+  }
+})
+
+async function cacheFirst(req) {
+  const cache = await caches.open(cacheName)
+  const cached = await cache.match(req)
+
+  return cached || fetch(req)
+}
+
+async function networkAndCache(req) {
+  const cache = await caches.open(cacheName);
+  try {
+    const refresh = await fetch(req)
+    await cache.put(req, fresh.clone())
+    return refresh
+  } catch (e) {
+    const cached = await cache.match(req);
+    return cached
+  }
+}
